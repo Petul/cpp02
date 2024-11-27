@@ -14,10 +14,10 @@ class Fixed
 {
    public:
 	Fixed();
-	Fixed(const Fixed& f) = default;
-	Fixed& operator=(const Fixed& f) = default;
+	Fixed(const Fixed&);
+	Fixed& operator=(const Fixed&);
 	~Fixed();
-	int getRawBits(void);
+	int getRawBits(void) const;
 	void setRawBits(int const raw);
 
    private:
