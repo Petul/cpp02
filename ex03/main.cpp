@@ -6,29 +6,28 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:22:40 by pleander          #+#    #+#             */
-/*   Updated: 2024/11/26 15:23:54 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:57:16 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "Fixed.hpp"
+#include "Point.hpp"
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main(void)
 {
-	Fixed a;
-	Fixed a2{12};
-	Fixed const b(Fixed(5.05f) * Fixed(2));
-	Fixed const b2{123.f};
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, a2) << std::endl;
-	std::cout << Fixed::min(a, a2) << std::endl;
-	std::cout << Fixed::max(b, b2) << std::endl;
-	std::cout << Fixed::min(b, b2) << std::endl;
-	return 0;
+	Point a(0, 0);
+	Point b(10, 0);
+	Point c(5, 10);
+	Point p(5, 5);
+
+	std::cout << "Should be inside: " << bsp(a, b, c, p) << std::endl;
+
+	p = Point(15, 15);
+	std::cout << "Should not be outside: " << bsp(a, b, c, p) << std::endl;
+
+	p = Point(5, -1);
+	std::cout << "Should not be inside: " << bsp(a, b, c, p) << std::endl;
 }
