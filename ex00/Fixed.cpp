@@ -35,7 +35,10 @@ Fixed& Fixed::operator=(const Fixed& f)
 	return *this;
 }
 
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+}
 
 int Fixed::getRawBits(void) const
 {
