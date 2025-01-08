@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:11:10 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/05 16:32:51 by pleander         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:29:11 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ bool Fixed::operator<(const Fixed& f) const
 
 bool Fixed::operator>=(const Fixed& f) const
 {
-	return (this->fp_num_ < f.fp_num_);
+	return (this->fp_num_ >= f.fp_num_);
 }
 
 bool Fixed::operator<=(const Fixed& f) const
@@ -135,7 +135,7 @@ Fixed Fixed::operator/(const Fixed& f) const
 
 Fixed& Fixed::operator++()
 {
-	*this = *this + Fixed(1);
+	++(this->fp_num_);
 	return *this;
 }
 
@@ -148,7 +148,7 @@ Fixed Fixed::operator++(int)
 
 Fixed& Fixed::operator--()
 {
-	*this = *this - Fixed(1);
+	--(this->fp_num_);
 	return *this;
 }
 
