@@ -31,6 +31,12 @@ int main(void)
 	p = Point(5, -1);
 	std::cout << "Should not be inside: " << bsp(a, b, c, p) << std::endl;
 
+	p = Point(5, 10);
+	std::cout << "Should not be inside: " << bsp(a, b, c, p) << std::endl;
+
+	p = Point(5, 0);
+	std::cout << "Should not be inside: " << bsp(a, b, c, p) << std::endl;
+
 	p = Point(2.2314f, 2.234f);
 	std::cout << "Should be inside: " << bsp(a, b, c, p) << std::endl;
 

@@ -32,6 +32,10 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed a2{area(c, a, point)};
 	Fixed a3{area(b, c, point)};
 
+	if (a1 == 0 || a2 == 0 || a3 == 0)  // Point is on line or vertice
+	{
+		return false;
+	}
 	if (a0 == a1 + a2 + a3)
 	{
 		return true;
