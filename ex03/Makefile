@@ -6,14 +6,14 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:52 by pleander          #+#    #+#              #
-#    Updated: 2024/11/26 15:26:12 by pleander         ###   ########.fr        #
+#    Updated: 2025/01/05 16:30:01 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Fixed
+NAME := Bsp
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++11
-SOURCES := main.cpp Fixed.cpp
+SOURCES := main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
 
